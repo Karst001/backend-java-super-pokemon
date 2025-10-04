@@ -19,7 +19,7 @@ public class WaterPokemon extends Pokemon{
         this.surf += surfValue;
     }
 
-    public void executeFlameThrower(int hydroPumpValue) {
+    public void executeHydroPump(int hydroPumpValue) {
         this.hydroPump += hydroPumpValue;
     }
 
@@ -33,11 +33,11 @@ public class WaterPokemon extends Pokemon{
     }
 
     //setters
-    public void setThunderPunch(int surf) {
+    public void setSurf(int surf) {
         this.surf = surf;
     }
 
-    public void setFlameThrower(int hydroPump) {
+    public void setHydroPump(int hydroPump) {
         this.hydroPump = hydroPump;
     }
 
@@ -47,5 +47,12 @@ public class WaterPokemon extends Pokemon{
         return super.toString() +
                 " [Hydro subclass: Surf=" + surf +
                 ", HydroPump=" + hydroPump + "]";
+    }
+
+    //added abstract class
+    @Override
+    public double makeMyMove(Pokemon target) {
+        //access helper to see what damage might be done
+        return DefenseHelper.effectiveAgainstElectricityAttacks(target.getType());
     }
 }

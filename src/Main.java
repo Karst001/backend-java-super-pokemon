@@ -40,5 +40,15 @@ public class Main {
         WaterPokemon water = new WaterPokemon("Nemo",24,7,3);
         //print the baseline
         System.out.println(water.toString());
+
+
+        //bonus
+        //execute abstract method
+        double result = fire.makeMyMove(grass);
+        System.out.println("When I shoot " + fire.getType() + " against " + grass.getType() + " the expected defense is: " + result);
+
+        result = electric.makeMyMove(water);
+        System.out.println("When I shoot " + electric.getType() + " against " + water.getType() + " the expected defense is: " + result);
+        //based on the result we can setHp, setXp, setLevel or perform other tasks
     }
 }

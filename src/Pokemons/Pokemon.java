@@ -4,7 +4,7 @@ package Pokemons;
 //Een Super klasse waarvan minimaal 2 private variabelen, 1 constructor, 2 methodes, 2 getters en 2 setters;
 
 //superclass that applies to all classes
-public class Pokemon {
+public abstract class Pokemon {
     //variables
     private final String species;
     private final Type type;
@@ -80,4 +80,8 @@ public class Pokemon {
     public String toString() {
         return ("[Pokemon superclass: Species: " + species + ", Type: " + type + ", Level: " + level + ", HP: " + hp + ", XP: " + xp + "]");
     }
+
+    //each pokemon must implement it's own method 'makeMyMove' to perform an action against another pokemon
+    //the value double is returned to the caller from Main like 'double result = fire.makeMyMove(grass)' and can be used further
+    public abstract double makeMyMove(Pokemon target);
 }

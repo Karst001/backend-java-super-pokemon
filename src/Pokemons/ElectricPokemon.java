@@ -15,11 +15,11 @@ public class ElectricPokemon extends Pokemon{
     }
 
     //methods that can be called from Pokemon
-    public void executeThunderPunch(int electroValue) {
+    public void executeElectroBall(int electroValue) {
         this.electroBall += electroValue;
     }
 
-    public void executeFlameThrower(int voltValue) {
+    public void executeVoltTackle(int voltValue) {
         this.voltTackle += voltValue;
     }
 
@@ -47,5 +47,12 @@ public class ElectricPokemon extends Pokemon{
         return super.toString() +
                 " [Electric subclass: ElectroBall=" + electroBall +
                 ", VoltTackle=" + voltTackle + "]";
+    }
+
+    //added abstract class
+    @Override
+    public double makeMyMove(Pokemon target) {
+        //access helper to see what damage might be done
+        return DefenseHelper.effectiveAgainstElectricityAttacks(target.getType());
     }
 }

@@ -48,4 +48,11 @@ public class FirePokemon extends Pokemon {
                 " [Fire subclass: ThunderPunch=" + thunderPunch +
                 ", FlameThrower=" + flameThrower + "]";
     }
+
+    //added abstract class
+    @Override
+    public double makeMyMove(Pokemon target) {
+        //access helper to see what damage might be done
+        return DefenseHelper.effectiveAgainstFlameAttacks(target.getType());
+    }
 }

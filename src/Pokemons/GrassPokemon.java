@@ -48,4 +48,11 @@ public class GrassPokemon extends Pokemon {
                 " [Fire subclass: SolarBeam=" + solarBeam +
                 ", LeafStorm=" + leafStorm + "]";
     }
+
+    //added abstract class
+    @Override
+    public double makeMyMove(Pokemon target) {
+        //access helper to see what damage might be done
+        return 0; //placeholder so app doesn't crash
+    }
 }
